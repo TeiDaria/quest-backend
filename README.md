@@ -7,11 +7,11 @@
 ## Стек технологий:
 - Язык: PHP 8+
 - СУБД: MySQL (InnoDB)
-- Веб-сервер: Nginx + PHP-FPM
+- Веб-сервер: Nginx + Apache
 - Архитектура: Clean Architecture
 - Окружение: Docker Compose
 
 ## Запуск проекта:
 1. Склонируйте репозиторий.
-2. Выполните `docker-compose up -d`.
+2. Выполните `docker compose up -d`.
 3. API будет доступно по адресу `http://localhost:8080`.
