@@ -50,6 +50,7 @@ CREATE TABLE IF NOT EXISTS progress (
     quest_id INT NOT NULL,
     current_node_id INT NOT NULL,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    UNIQUE KEY unique_player_quest (player_id, quest_id),
     FOREIGN KEY (player_id) REFERENCES players(id) ON DELETE CASCADE,
     FOREIGN KEY (quest_id) REFERENCES quests(id) ON DELETE CASCADE,
     FOREIGN KEY (current_node_id) REFERENCES nodes(id) ON DELETE CASCADE

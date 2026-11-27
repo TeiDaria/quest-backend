@@ -40,8 +40,11 @@ class MySqlProgressRepository implements ProgressRepositoryInterface
 
     public function createProgress(int $playerId, int $questId, int $startNodeId): void
     {
-        // Используем REPLACE INTO, чтобы если прогресс уже есть, он перезаписался (начало заново)
-        $stmt = $this->pdo->prepare("REPLACE INTO progress (player_id, quest_id, current_node_id) VALUES (:player_id, :quest_id, :node_id)");
+        $stmt = $this->pdo->prepare("
+            INSERT INTO progress (player_id, quest_id, current_node_id) 
+            VALUES (:player_id, :quest_id, :node_id)
+            ON DUPLICATE KEY UPDATE current_node_id = VALUES(current_node_id), updated_at = CURRENT_TIMESTAMP
+        ");
         $stmt->execute([
             'player_id' => $playerId,
             'quest_id' => $questId,
