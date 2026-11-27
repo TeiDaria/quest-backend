@@ -11,4 +11,5 @@ RUN sed -i 's|/var/www/html|/var/www/html/public|g' /etc/apache2/sites-available
 # mod_rewrite для ЧПУ
 RUN a2enmod rewrite
 
+RUN sed -i 's|AllowOverride None|AllowOverride All|g' /etc/apache2/apache2.conf
 COPY . /var/www/html/
