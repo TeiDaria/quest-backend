@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Квест - Клиентская часть</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Тайна старого особняка</h1>
+        
+        <div id="error-msg" class="error hidden"></div>
+
+        <div id="game-area" class="hidden">
+            <div id="node-title" class="node-title"></div>
+            <div id="node-content" class="node-text"></div>
+            <div id="choices-container"></div>
+        </div>
+
+        <button id="start-btn" onclick="startQuest()">Начать квест</button>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

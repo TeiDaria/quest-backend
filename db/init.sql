@@ -71,3 +71,5 @@ INSERT INTO transitions (quest_id, from_node_id, to_node_id, choice_text) VALUES
 (1, 1, 3, 'Обойти дом сзади'),
 (1, 2, 4, 'Подняться наверх'),
 (1, 2, 3, 'Открыть странную дверь в полу');
+
+INSERT IGNORE INTO players (id, username) VALUES (1, 'TestPlayer');
